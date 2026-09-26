@@ -1,5 +1,7 @@
 # StockSense
 
+😒😌 At last moment My team member left the team, Single I handle both frontend and Backend. I am good in backend. That's why frontend has some bug.
+
 StockSense is a modular **Inventory Management System (IMS)** designed to digitize and streamline stock-related operations within a business.
 
 The system replaces manual registers, Excel sheets, and scattered inventory-tracking methods with a centralized, real-time, easy-to-use application.
