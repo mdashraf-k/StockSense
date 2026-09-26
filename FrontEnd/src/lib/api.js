@@ -29,7 +29,13 @@ export const apiError = (error) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error?.response?.status === 401 && !window.location.pathname.startsWith("/login")) {
+    // Do NOT log the user out for every 401. A protected business endpoint
+    // may return 401/403 because of permissions or a backend rule.
+    // Only the session check is authoritative for deciding that the
+    // browser no longer has a valid login session.
+    const requestUrl = error?.config?.url || "";
+    const isSessionCheck = requestUrl === "/users/me";
+    if (error?.response?.status === 401 && isSessionCheck && !window.location.pathname.startsWith("/login")) {
       window.dispatchEvent(new CustomEvent("stocksense:unauthorized"));
     }
     return Promise.reject(error);

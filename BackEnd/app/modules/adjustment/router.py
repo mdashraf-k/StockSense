@@ -30,7 +30,7 @@ def get_adjustment_service(
 
 
 @router.post(
-    "/",
+    "",
     response_model=AdjustmentResponse,
     status_code=201
 )
@@ -49,7 +49,7 @@ def create_adjustment(
 
 
 @router.get(
-    "/",
+    "",
     response_model=list[AdjustmentResponse]
 )
 def get_adjustments(
