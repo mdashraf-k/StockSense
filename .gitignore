@@ -1,0 +1,24 @@
+@'
+# Virtual Environments
+backend/.venv/
+.venv/
+venv/
+ENV/
+
+# Python caches
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Node / Frontend dependencies
+frontend/node_modules/
+node_modules/
+
+# Environment variables (Secrets)
+.env
+.env.*
+
+# Operating System artifacts
+.DS_Store
+Thumbs.db
+'@ | Out-File -FilePath .gitignore -Encoding utf8
